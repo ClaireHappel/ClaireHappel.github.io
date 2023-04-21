@@ -12,6 +12,10 @@
 
 # How to test projects
 1) In terminal, type => os test
+2) Type github username if prompted
+3) Type personal access token if prompted
+4) Select bootcamp session
+5) Select project to test
 
 # First Website
 - Complete todos 1-10
@@ -21,5 +25,5 @@
 
 # How to run git commands
 1) In terminal, type => git add -A
-
-
+2) In terminal, type => git commit -m "describe your work"
+3) In terminal, type => git push
