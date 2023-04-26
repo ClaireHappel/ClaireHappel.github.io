@@ -33,12 +33,36 @@
  *      the exact case.
  */
 
+//I: one hour of day, that is a number
+//O: greeting dependent on what hour is input
+//C: tests are case sensitive
+//E: N/A
+
+//create funct greeter with one param, hour
 function greeter(hour) {
     // YOUR CODE BELOW HERE //
-    
-    
-    
-    
+ //init variable greeting to val of string literal
+ let greeting = '';
+ //create a conditional chain
+ //if the hour is btw 0 and 11, inclusionary
+  if (hour >= 0 && hour <= 11) {
+   //assign greeting to 'Good Morning!'
+   greeting = 'Good Morning!';
+   // else if hour is btw 12 and 16, inclusionary
+  } else if (hour >= 12 && hour <= 16) {
+   //assign greeting to 'Good Afternoon!'
+   greeting = 'Good Afternoon!';
+   //else if hours is btw 17 and 21, inclusionary  
+  } else if (hour >= 17 && hour <= 21) {
+   //assign greeting to 'Good Evening!'
+   greeting = 'Good Evening!';
+   //for all other times
+  } else {
+   //assign greeting to 'Good Night!'
+   greeting = 'Good Night!';
+  }
+ //print greeting to screen
+  console.log(greeting);
     // YOUR CODE ABOVE HERE //
 }
 
