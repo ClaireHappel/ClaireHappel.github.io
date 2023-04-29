@@ -21,15 +21,47 @@
  *  b. you'll need a loop, which one is best?
  *  c. you'll wanna make use of the push() method of Array.
  */
-function range(start, end) {
-    // YOUR CODE GOES BELOW HERE //
-    
-    
-    
-    
-    // YOUR CODE GOES ABOVE HERE //
-}
 
+//I: two params that are numbers
+//O: an array of all nums between start and end. if end is greater than start, provide them in reverse
+//C: create something to store collected output, use push method, use one type of loop
+
+///for function range, with two params start and end
+function range(start, end) {
+  // YOUR CODE GOES BELOW HERE //
+ 
+  //init storArr to array literal
+  let storArr = [];
+  //create var count set to a num
+  let count = 0;
+
+//if first arg is less than second
+if (start < end) {
+   //reassign count variable to the param start
+   count = start;
+   //create a while loop to count all the way to end
+   while (count <= end) {
+     //push count to storArr
+     storArr.push(count);
+     //increment of one
+     count++;
+   }
+  //else if end is less than start
+ } else if (end < start) {
+  //reassign count variable to the param end
+  count = start;
+  //create a while loop to count all the way to the start
+  while (count >= end) {
+    //push count to storArr
+    storArr.push(count);
+    //increment of one
+    count--;
+  }
+ } 
+   //return storArr
+   return storArr;
+   // YOUR CODE GOES ABOVE HERE //
+}
 
 
 
