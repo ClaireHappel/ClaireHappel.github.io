@@ -34,23 +34,77 @@
  */
 
 // YOUR CODE GOES BELOW HERE //
+
 function makeContact(id, nameFirst, nameLast) {
 
-} 
+    // return contact obj
+    return {
+      //init key id to value id
+      id: id,
+      //init key nameFirst to value nameFirst
+      nameFirst: nameFirst,
+      //init key nameLat to value nameLast
+      nameLast: nameLast
+    };
+  
+  }  
 
 
-function makeContactList() {
+  function makeContactList() {
     /*
      * You need something here to hold contacts. See length api for a hint:
      */
-    var contacts;
-    
+    let storContacts = []; //assume contacts looks like the contacts in data folder
+  
     return {
-        // we implemented the length api for you //
-        length: function() {
-            return contacts.length;
+      // we implemented the length api for you //
+      //init key length to the val of a function that returns the length of contacts
+      length: function() {return storContacts.length},
+      //init key addContact to the val of a function that taskes one param, contat. It then pushes any contact to the contacts list
+      addContact: function addContact(contact) {return storContacts.push(contact)},
+      //init key findContact to the val of a function that takes one param, fullName. it returns the specified object if found in the contact list, or undefined if not   
+      findContact: function findContact(fullName) {
+          
+        //search through the contacts array with a for loop
+        for (let i = 0; i < storContacts.length; i++) {
+  
+          //if fullName is strictly equal to the value of the first and last name of that contact
+          if (fullName === (storContacts[i].nameFirst + ' ' + storContacts[i].nameLast)) {
+          //return the entire object
+          return storContacts[i];
+          //else if the fullName does not exist
+          } else {
+          //return undefined
+           return undefined;
+          }
+    
         }
+    
+    },
+    removeContact: function removeContact(contact) {
+      //for loop to go over all of storContacts
+      for (let i = 0; i < storContacts.length; i++) {
+        //if var contact is not undefined
+        if(storContacts[i] === contact) {
+          //splice storContacts at index i, deleting the object there
+          return storContacts.splice(i, 1);
+        }
+      }
+    },
+      printAllContactNames: function printAllContactNames() {
+      
+        let nameFull = [];;
+
+        for (let i = 0; i < storContacts.length; i++) {
+           //nameFull to 
+         nameFull.push(storContacts[i].nameFirst + ' ' + storContacts[i].nameLast);
+      
+        }
+       
+      return nameFull.join('\n');
     }
+  }
+      
 }
 
 

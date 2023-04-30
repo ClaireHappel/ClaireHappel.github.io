@@ -175,8 +175,7 @@ function allStringsPass(strings, test) {
 let result = [];
 //init countTrue to 0
 let countTrue = 0;
-//init countFalse to 0
-let countFalse = 0;
+
 
 //loop over the entire array of strings
 for (let i = 0; i < strings.length; i++) {
@@ -188,14 +187,14 @@ for (let i = 0; i < strings.length; i++) {
     //increase countTrue by 1
     countTrue += 1;
   //else if the tested strings return a false result
-  } else if (test(strings[i]) === false) {
-    //increase countFalse by 1
-    countFalse += 1;
+  } else {
+    //increase countTrue by 0
+    countTrue += 0;
   }
 
 }
 
-//if countTrue or countFalse are equal to number of values sent to result (aka its length)
+//if countTrue is equal to number of values sent to result (aka its length)
  if (countTrue === result.length) {
    //return true
    return true;
