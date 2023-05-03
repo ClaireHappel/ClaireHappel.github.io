@@ -129,24 +129,29 @@ console.log(animals);
 //create variable called friends and assign to an array
 var friends = [];
 
-//create function getRandom that takes animals array and returns a random index of the input array using Math.randomom
+//create function getRandom that takes animals array and returns a random index of the input array using Math.random
 function getRandom(array) {
-
- //
+ 
+ //init max to the value of the last value of the array rounded down
  let max = Math.floor(array.length - 1);
+ //init min to the value of the first value of the array rounded up
  let min = Math.ceil(0);
-
+  
+   //return the rounded down result of Math.random multiplied by max minus min plus 1 and then added to min
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-//
 
+//init var indexToAdd to the value of a random animal using the getRandom function
 var indexToAdd = getRandom(animals);
 
+//push the name of animal at this index to the friends array
 friends.push(animals[indexToAdd].name);
 
+//console log friends
 console.log(friends)
 
+//use bracket notation to add tge friends list as a property also named friends on one of the animals within the array
 animals[getRandom(animals)].friends = friends;
 
 /**
