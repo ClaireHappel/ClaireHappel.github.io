@@ -85,7 +85,7 @@ function makeContact(id, nameFirst, nameLast) {
       //for loop to go over all of storContacts
       for (let i = 0; i < storContacts.length; i++) {
         //if var contact is not undefined
-        if(storContacts[i] === contact) {
+        if (storContacts[i] === contact) {
           //splice storContacts at index i, deleting the object there
           return storContacts.splice(i, 1);
         }
@@ -93,7 +93,7 @@ function makeContact(id, nameFirst, nameLast) {
     },
       printAllContactNames: function printAllContactNames() {
       
-        let nameFull = [];;
+        let nameFull = [];
 
         for (let i = 0; i < storContacts.length; i++) {
            //nameFull to 

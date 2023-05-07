@@ -32,32 +32,26 @@ function range(start, end) {
  
   //init storArr to array literal
   let storArr = [];
-  //create var count set to a num
-  let count = 0;
 
 //if first arg is less than second
 if (start < end) {
-   //reassign count variable to the param start
-   count = start;
    //create a while loop to count all the way to end
-   while (count <= end) {
-     //push count to storArr
-     storArr.push(count);
+   while (start <= end) {
+     //push start to storArr
+     storArr.push(start);
      //increment of one
-     count++;
+     start++;
    }
-  //else if end is less than start
- } else if (end < start) {
-  //reassign count variable to the param end
-  count = start;
-  //create a while loop to count all the way to the start
-  while (count >= end) {
-    //push count to storArr
-    storArr.push(count);
-    //increment of one
-    count--;
+//else if end is less than start
+} else if (end < start) {
+   //create a while loop to count all the way to the start
+   while (start >= end) {
+     //push start to storArr
+     storArr.push(start);
+     //increment of one
+     start--;
   }
- } 
+} 
    //return storArr
    return storArr;
    // YOUR CODE GOES ABOVE HERE //
