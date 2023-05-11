@@ -2,23 +2,46 @@
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function range() {
+//I: Write a range function that takes two arguments, start and end
+//O: returns an array containing all the numbers from start up to (and including) end.
 
-}
+
 
 ////////////////////////////////////////////////////////////////////////////////
 // sum /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function sum() {
+//I: write a sum function that takes an array of numbers 
+//O: returns the sum of these numbers
 
+function sum(arr) {
+  
+  //init variable sumOf to 0
+  let sumOf = 0
+
+  //create a for loop to go over all vals of arr
+  for (let i = 0; i < arr.length; i++) {
+      //reassign sumOf to the value of itself plus all array values
+      sumOf += arr[i];
+  }
+  //return sumOf
+  return sumOf;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // reverseArray ////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function reverseArray() {
+//I: takes an array as argument 
+//O: produces a new array that has the same elements in the inverse order.
+
+function reverseArray(arr) {
+  
+  //init arrCopy to the values of arr
+  let arrCopy = [...arr];
+
+  //return the copy reversed
+  return arrCopy.reverse();
 
 }
 
