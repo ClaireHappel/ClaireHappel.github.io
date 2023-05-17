@@ -5,6 +5,29 @@
 //I: Write a range function that takes two arguments, start and end
 //O: returns an array containing all the numbers from start up to (and including) end.
 
+function range(start, end) {
+
+  //init value numArray to an array literal
+  numArray = [];
+    
+  //if start is strictly equal to end
+    if (start === end) {
+      return numArray;
+    }
+
+
+  if (start < end) {
+    //while start is less than or equal to end
+    for (var i = start; i < end; i++) {
+      //push start into numArray
+      numArray.push(start);
+
+    }
+
+  }
+    //return numArray
+    return numArray;
+  }
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -49,8 +72,10 @@ function reverseArray(arr) {
 // reverseArrayInPlace /////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function reverseArrayInPlace() {
+function reverseArrayInPlace(arr) {
 
+  return arr.reverse();
+  
 }
 
 ////////////////////////////////////////////////////////////////////////////////
