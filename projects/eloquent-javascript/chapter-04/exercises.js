@@ -82,7 +82,15 @@ function reverseArrayInPlace(arr) {
 // arrayToList /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function arrayToList() {
+function arrayToList(array) {
+
+  let rest = null;
+
+  for (let i = array.length - 1; i >= 0; i--) {
+    rest = { value: array[i], rest: rest };
+  }
+
+  return rest;
 
 }
 
@@ -90,9 +98,30 @@ function arrayToList() {
 // listToArray /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function listToArray() {
-
+function listToArray(list, output=[]) {
+//base
+if (list.rest === null) {
+  output.push(list.value);
+  return output;
 }
+//recursion
+output.push(list.value)
+
+return listToArray(list.rest, output)
+}
+
+/*
+
+//invoke listToArray(listOne)
+  //BASE // FALSE
+  //RECURSION
+      //[].push(10) => [10]
+        //BASE // FALSE
+        //RECURSION
+          //[10].push(20) => [10, 20]
+            //BASE // TRUE
+
+*/
 
 ////////////////////////////////////////////////////////////////////////////////
 // prepend /////////////////////////////////////////////////////////////////////
