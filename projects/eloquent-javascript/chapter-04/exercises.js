@@ -2,31 +2,34 @@
 // range ///////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-//I: Write a range function that takes two arguments, start and end
+//I: Write a range function with a start and end
 //O: returns an array containing all the numbers from start up to (and including) end.
 
-function range(start, end) {
+function range(start, stop, step=1){
 
-  //init value numArray to an array literal
-  numArray = [];
-    
-  //if start is strictly equal to end
-    if (start === end) {
-      return numArray;
-    }
-
-
-  if (start < end) {
-    //while start is less than or equal to end
-    for (var i = start; i < end; i++) {
-      //push start into numArray
-      numArray.push(start);
-
-    }
-
+  let numbers = [];
+     if (step == 0) return
+     if (start === stop) return [];
+     if (start > stop && step > 0) step *= -1
+     if (step < 0){
+        for (let num = start; num >= stop; num += step){                
+           numbers.push(num);
+     }
+        return numbers;
+     }
+     for (let num = start; num <= stop; num += step){ 
+        numbers.push(num);
+     }
+     return numbers;
   }
-    //return numArray
-    return numArray;
+  
+  function sum(arr){
+     if (arr == undefined) return
+     result = 0;
+     for (let i = 0; i < arr.length; i++){
+     result += arr[i];
+     }
+     return result
   }
 
 
@@ -127,16 +130,26 @@ return listToArray(list.rest, output)
 // prepend /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function prepend() {
-
+prepend = (value, rest) => {
+  let list = {
+   value:value,
+    rest:rest,
+  }
+  return list;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // nth /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function nth() {
-
+function nth(list, position){
+	if(listToArray(list).length - 1 < position || position < 0){
+		return undefined;
+	}
+	if(position){
+		return nth(list.rest, position - 1);
+    }
+	return list.value;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -145,12 +158,12 @@ function nth() {
 
 function deepEqual(x, y) {
 
-  //determine is both x and y are not objects
+
   if (typeof x !== 'object' && typeof y !== 'object') {
       return x === y;
    }
  
- //determine if one of the values is still not an object
+ 
   if (typeof x !== 'object' || typeof y !== 'object') {
       return false;
    }
@@ -158,7 +171,7 @@ function deepEqual(x, y) {
  let xKeys = Object.keys(x);
  let yKeys = Object.keys(y);
  
- //if they have different numbers of keys, they are not equal
+ 
   if (xKeys.length !== yKeys.length) {
       return false;
   }
