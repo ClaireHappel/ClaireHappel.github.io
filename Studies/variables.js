@@ -65,10 +65,10 @@
  /* *
  *  3. Hoisting
  *  
- *  Hoisting is a pre execution process that specifies what order our code will execute in. Functions are always hoisted to the top, next are any variable declarations using var. This
+ *  Hoisting is a pre execution process that will move certain declarations to the top of their scope. Functions are always hoisted to the top, next are any variable declarations using var. This
  *  process does not just happen on a global scope, but also inside of functions themselves. Hoisting is important to remember when writing code because it impacts where we can access
- *  parts of our code and can lead to errors unchecked. Using let and const to declare a variable will allow hoisting within their scope but will prevent initialization before declaration, 
- *  creating an error instead of simply declaring the variable undefined. This helps us weed out any unintentional side effects that could result from hoisting. 
+ *  parts of our code and can lead to errors. Using let and const to declare a variable will prevent variables being used before declaration, sending an error to the console instead 
+ *  of simply declaring the variable undefined. This helps us weed out any unintentional side effects that could result from hoisting. 
  *   
  * */
     
@@ -104,7 +104,7 @@
     gimmeGimmeGimme();
     
     //declaring after a function call
-    //takeMe is undefined within the function, no errors are thrown
+    //takeMe is undefined when called within the function, no errors are thrown
     var takeMe = 'through the darkness';
     //toThe meanwhile, threw an error
     const toThe = 'break of the day';

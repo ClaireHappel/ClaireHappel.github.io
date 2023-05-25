@@ -41,10 +41,8 @@ function range(start, stop, step=1){
 //O: returns the sum of these numbers
 
 function sum(arr) {
-  
   //init variable sumOf to 0
   let sumOf = 0
-
   //create a for loop to go over all vals of arr
   for (let i = 0; i < arr.length; i++) {
       //reassign sumOf to the value of itself plus all array values
@@ -62,10 +60,8 @@ function sum(arr) {
 //O: produces a new array that has the same elements in the inverse order.
 
 function reverseArray(arr) {
-  
   //init arrCopy to the values of arr
   let arrCopy = [...arr];
-
   //return the copy reversed
   return arrCopy.reverse();
 
@@ -75,31 +71,34 @@ function reverseArray(arr) {
 // reverseArrayInPlace /////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function reverseArrayInPlace(arr) {
+//I: takes in an array
+//O: reverses it in place
 
+function reverseArrayInPlace(arr) {
   return arr.reverse();
-  
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // arrayToList /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
+//I: one param, array
+//O: return an object that is a list
+
 function arrayToList(array) {
-
   let rest = null;
-
-  for (let i = array.length - 1; i >= 0; i--) {
-    rest = { value: array[i], rest: rest };
-  }
-
+    for (let i = array.length - 1; i >= 0; i--) {
+      rest = { value: array[i], rest: rest };
+    }
   return rest;
-
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 // listToArray /////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+
+//I: take an object that is a list
+//O: return an array created from that list
 
 function listToArray(list, output=[]) {
 //base
@@ -109,7 +108,6 @@ if (list.rest === null) {
 }
 //recursion
 output.push(list.value)
-
 return listToArray(list.rest, output)
 }
 
@@ -130,6 +128,8 @@ return listToArray(list.rest, output)
 // prepend /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
+//I: takes an element and a list
+//0: creates a new list that adds the element to the front of the input list,
 prepend = (value, rest) => {
   let list = {
    value:value,
@@ -141,6 +141,10 @@ prepend = (value, rest) => {
 ////////////////////////////////////////////////////////////////////////////////
 // nth /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+
+//I: which takes a list and a number 
+//O: and returns the element at the given position in the list (with zero referring to the first element) 
+//E: or undefined when there is no such element
 
 function nth(list, position){
 	if(listToArray(list).length - 1 < position || position < 0){
@@ -156,34 +160,28 @@ function nth(list, position){
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function deepEqual(x, y) {
+//I: takes two values 
+//O: returns true only if they are the same value or are objects with the same properties, 
+//   where the values of the properties are equal when compared with a recursive call to deepEqual
 
-
-  if (typeof x !== 'object' && typeof y !== 'object') {
-      return x === y;
+function deepEqual(first, second) {
+  if (typeof first !== 'object' && typeof second !== 'object') {
+      return first === second;
    }
- 
- 
-  if (typeof x !== 'object' || typeof y !== 'object') {
+  if (typeof first !== 'object' || typeof second !== 'object') {
       return false;
    }
-
- let xKeys = Object.keys(x);
- let yKeys = Object.keys(y);
- 
- 
-  if (xKeys.length !== yKeys.length) {
+ let keyFirst = Object.keys(first);
+ let keySecond = Object.keys(second);
+  if (keyFirst.length !== keySecond.length) {
       return false;
   }
-
-  for (let i = 0; i < xKeys.length; i++) {
-    if (!yKeys.includes(xKeys[i]) || !deepEqual(x[xKeys[i]], y[xKeys[i]])) {
+  for (let i = 0; i < keyFirst.length; i++) {
+    if (!keySecond.includes(keyFirst[i]) || !deepEqual(first[keyFirst[i]], second[keySecond[i]])) {
        return false;
     }
   }
-
   return true;
-
 }
 
 ////////////////////////////////////////////////////////////////////////////////
