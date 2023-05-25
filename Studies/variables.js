@@ -80,19 +80,19 @@
        
        //accessible values 
        console.log(aMan); // => after midnight
-       console.log(wontSomebody) // => help me chase the shadows away?
+       console.log(wontSomebody); // => help me chase the shadows away?
        console.log(theresNot); // => a soul out there
        //let prevents initialization before declaration
        console.log(noOne); // => ReferenceError: Cannot access 'noOne' before initialization
        //var will cause the value not yet declared to return undefined, as the program recognizes var exists because of hoisting
-       console.log(takeMe) // => undefined
+       console.log(takeMe); // => undefined
        //const will also prevent intitilization prior to declaration
-       console.log(toThe) // => ReferenceError: Cannot access 'toThe' before initialization
+       console.log(toThe); // => ReferenceError: Cannot access 'toThe' before initialization
           
        let noOne = 'to hear my prayer';  
        
        //noOne can be accessed after being declared
-       console.log(noOne) // => to hear my prayer
+       console.log(noOne); // => to hear my prayer
 
     }
     
