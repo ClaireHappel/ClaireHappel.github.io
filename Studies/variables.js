@@ -1,17 +1,21 @@
 /* *
  *  0. VARIABLES
  * 
- *  Variables hold on to the information we assign either during initialization or assignment later in the program. They allow us to use data as many times as needed within
- *  our programs. They can be assigned to the value of any data type: whether simple like strings, booleans, and numbers or complex like objects and arrays. Ideally, they are 
- *  named in a way that we can guess at what they hold (for example strToArr could be a storage array for a string being changed into an array). While said values can not be 
- *  changed (for example, the number 2 can not suddenly morph into 4), we can manipulate variables so that they let go of their old value and grasp on to a new one via reassignment.
- *  Reassignment should not be confused with redeclaration- which can cause undesired side effects and occurs when declaring the same variable twice with var.
+ *  Variables hold on to the information we assign either during initialization or assignment later in the program. 
+ *  They allow us to use data as many times as needed within our programs. They can be assigned to the value of any 
+ *  data type: whether simple like strings, booleans, and numbers or complex like objects and arrays. Ideally, they 
+ *  are named in a way that we can guess at what they hold (for example strToArr could be a storage array for a string 
+ *  being changed into an array). While said values can not be changed (for example, the number 2 can not suddenly morph  
+ *  into 4), we can manipulate variables so that they let go of their old value and grasp on to a new one via reassignment. 
+ *  Reassignment should not be confused with redeclaration- which can cause undesired side effects and occurs when declaring 
+ *  the same variable twice with var.
  * 
  * 
  *  1. Declaration and assignment
  * 
- *  Declaration is when we name our variable and assignment is when we assign that name to a designated value. If both are performed in one step, we have successfully initialized our
- *  variable. After assignment, it is possible to reassign the value to a new value. 
+ *  Declaration is when we name our variable and assignment is when we assign that name to a designated value. If both are 
+ *  performed in one step, we have successfully initialized our variable. After assignment, it is possible to reassign the value 
+ *  to a new value. 
  * 
  * */
      //declaration of variable pet
@@ -23,10 +27,11 @@
 /* * 
  *  2. var, let, and const
  * 
- *  There are three ways to declare a variable within Javascript- var, let, and const. The first way, var, was used during the earlier days of Javascript. Due to issues caused by its ability
- *  to be redeclared, developers sought a solution. The answer to the problem of var came in the form of the two other ways to declare- let and const. Declaring a function with let will allow it to be reassigned similarly 
- *  to var, but will not allow for redeclaration. Meanwhile, declaring with const will mean the variable will not allow any reassignment or redeclaration. While var is hoisted to the top of 
- *  scope and is function scope- let and const are both block scoped.
+ *  There are three ways to declare a variable within Javascript- var, let, and const. The first way, var, was used during the earlier 
+ *  days of Javascript. Due to issues caused by its ability to be redeclared, developers sought a solution. The answer to the problem 
+ *  of var came in the form of the two other ways to declare- let and const. Declaring a function with let will allow it to be reassigned 
+ *  similarly to var, but will not allow for redeclaration. Meanwhile, declaring with const will mean the variable will not allow any 
+ *  reassignment or redeclaration. While var is hoisted to the top of scope and is function scope- let and const are both block scoped.
  * 
  * */
      // var: 
@@ -65,10 +70,11 @@
  /* *
  *  3. Hoisting
  *  
- *  Hoisting is a pre execution process that will move certain declarations to the top of their scope. Functions are always hoisted to the top, next are any variable declarations using var. This
- *  process does not just happen on a global scope, but also inside of functions themselves. Hoisting is important to remember when writing code because it impacts where we can access
- *  parts of our code and can lead to errors. Using let and const to declare a variable will prevent variables being used before declaration, sending an error to the console instead 
- *  of simply declaring the variable undefined. This helps us weed out any unintentional side effects that could result from hoisting. 
+ *  Hoisting is a pre execution process that will move certain declarations to the top of their scope. Functions are always hoisted to the 
+ *  top, next are any variable declarations using var. This process does not just happen on a global scope, but also inside of functions 
+ *  themselves. Hoisting is important to remember when writing code because it impacts where we can access parts of our code and can lead 
+ *  to errors. Using let and const to declare a variable will prevent variables being used before declaration, sending an error to the console 
+ *  instead of simply declaring the variable undefined. This helps us weed out any unintentional side effects that could result from hoisting. 
  *   
  * */
     

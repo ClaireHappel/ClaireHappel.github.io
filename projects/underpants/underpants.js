@@ -24,6 +24,8 @@ var _ = {};
 _.identity = function (value) {
     return value;
 }
+
+
 /** _.typeOf
 * Arguments:
 *   1) Any value
@@ -46,31 +48,31 @@ _.identity = function (value) {
 
 _.typeOf = function(value) {
     
-let type = '';
-
-    if (typeof value === 'string') {
-    type = 'string';
-   } else  if (typeof value === 'number'){
-    type = 'number';
-   } else if (typeof value === 'boolean'){
-    type = 'boolean';
-   } else if (typeof value === 'function') {
-    type = 'function';
-   } else if (value === null) {
-    type = 'null';
-   } else if (typeof value === 'undefined') {
-    type = 'undefined';
-   } else if (typeof value === 'object') {
-      if (Array.isArray(value) === true) {
-         type = 'array';
-      } else if (value instanceof Date) {
-        type = 'date';
-      } else {
-        type = 'object';
-      }
-   }
-   return type;
-}
+  let type = '';
+  
+     if (typeof value === 'string') {
+         type = 'string';
+     } else  if (typeof value === 'number'){
+         type = 'number';
+     } else if (typeof value === 'boolean'){
+         type = 'boolean';
+     } else if (typeof value === 'function') {
+         type = 'function';
+     } else if (value === null) {
+         type = 'null';
+     } else if (typeof value === 'undefined') {
+         type = 'undefined';
+     } else if (typeof value === 'object') {
+        if (Array.isArray(value) === true) {
+           type = 'array';
+        } else if (value instanceof Date) {
+           type = 'date';
+        } else {
+           type = 'object';
+        }
+     }
+     return type;
+  }
 
 
 
@@ -95,12 +97,9 @@ let type = '';
 
 //init first to a function that takes an array 
 _.first = function (array, number) {
-
-  
     //if an array is not an array or number is less than 0
     if (!Array.isArray(array) || number < 0) {
       return [];
-
     } else if (!number || number === NaN) {
       return array[0];
     }
@@ -108,9 +107,7 @@ _.first = function (array, number) {
    if (number) {
        array.splice(number);
      }
-  
     return array;
-    
   }
 
 
@@ -182,7 +179,6 @@ _.indexOf = function(array, value) {
 
   //init storVal to the val of an empty array
   let storVal = []; 
-
   //loop through the array to get all values
   for (let i = 0; i < array.length; i++) {
   //loop through all values of storVal
@@ -216,7 +212,6 @@ _.indexOf = function(array, value) {
 */
 
 _.contains = function(array, value) {
-
     return _.indexOf(array, value) > -1 ? true: false;
 
 }
@@ -266,9 +261,7 @@ _.each = function(collection, func) {
 */
 
 _.unique = (array) => {
-
   var uniqueArr = [...new Set(array)];
-
   return uniqueArr;
 
 }
@@ -293,18 +286,13 @@ _.unique = (array) => {
 //O: return new array of elements that returned true when the function was called
 
 _.filter = function(array, func) {
-
   //init storElem to an array literal
   let storElem = [];
-  
   for (var index = 0; index < array.length; index++) {
-
     let element = array[index]
-      
     if (func(element, index, array) === true && func(element, index, array) !== undefined) {
       storElem.push(element);
     }
-
   }
   return storElem;
 }
@@ -323,18 +311,13 @@ _.filter = function(array, func) {
 */
 
 _.reject = function(array, func) {
-
   //init storElem to an array literal
   let storElem = [];
-  
   for (var index = 0; index < array.length; index++) {
-
     let element = array[index]
-      
     if (func(element, index, array) !== true && func(element, index, array) !== undefined) {
       storElem.push(element);
     }
-
   }
   return storElem;
 }
@@ -363,16 +346,13 @@ _.partition = (array, func) => {
   let truthy = [];
   let falsey = [];
   for(let i = 0; i < array.length; i++){
-
       if(func(array[i], i, array)){
-          truthy.push(array[i])
+          truthy.push(array[i]);
       } else {
-
-           falsey.push(array[i])
-
+           falsey.push(array[i]);
       }
   }
-  return [truthy , falsey]
+  return [truthy , falsey];
 }
 
 /** _.map
@@ -433,7 +413,6 @@ _.pluck = function (arrayObj, propKey) {
     var newarr = arrayObj.map(function(arr){
         return arr[propKey];
     });
-    
     return newarr;
 }
 
@@ -459,9 +438,7 @@ _.pluck = function (arrayObj, propKey) {
 */
 
 _.every = (collection, func) => {
-
   let check = func || _.identity;
-
   if (collection.length === 0) {
       return true;
   }    
