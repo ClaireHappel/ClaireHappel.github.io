@@ -37,7 +37,7 @@
      // var: 
 
       //declaring and assigning a value with var
-      var thisFire = 'Is out of control';
+      var thisFire = 'Is out of control'; 
       console.log(thisFire); // => Is out of control
       //redeclaring the variable 
       var thisFire = 'Is actually pretty manageable!';

@@ -33,7 +33,7 @@
  * 
  * */
       //init mood to value happy
-      let mood = 'happy';
+      let mood = 'happy'; 
 
       //create an else-if chain that logs a string based on mood
       if (mood === 'serious') {

@@ -14,7 +14,7 @@
 /* *
  *  1. With operators
  * 
- * 
+ *    + and += string operators
  * */
 
 /* *

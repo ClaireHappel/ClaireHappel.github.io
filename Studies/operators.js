@@ -68,14 +68,15 @@
  *  
  *  Arithmetic operators work with numbers or variables that represent numbers. They will evaluate to a number 
  *  value which will then be returned. They can work with both whole numbers (for example: 2, 463287, 86) or numbers
- *  that have a decimal point (for example: 4.5, 34.0000344, or .098). Arithmetic operators, as implied by their name- 
- *  involve arithmetic concepts such as adding, subtracting, dividing, or multiplying. One way that Javascript differs 
- *  from standard arithmetic found in a classroom is the way that it handles division. If the number 0 is divided by 0, 
- *  it will return NaN. If a positive number is divided by 0, it will return infinity. On the other hand, a negative 
- *  number divided by 0 will return negative infinity. Similarly, odd things can happen when using floating point numbers 
- *  with arithmetic numbers (for example, 0.1 + 0.2 does not equal 0.3, but instead 0.30000000000000004). This is due 
- *  to how the values are calculated within the computer in binary, and thus not an error, but instead a quirk of 
- *  many programming languages. 
+ *  that have a decimal point (for example: 4.5, 34.0000344, or .098). Both are floating point values instead of integers.
+ *  Arithmetic operators, as implied by their name- involve arithmetic concepts such as adding, subtracting, dividing,
+ *  or multiplying. One way that Javascript differs from standard arithmetic found in a classroom is the way that it 
+ *  handles division. If the number 0 is divided by 0, it will return NaN. If a positive number is divided by 0, 
+ *  it will return infinity. On the other hand, a negative number divided by 0 will return negative infinity. 
+ *  Similarly, odd things can happen when using floating point numbers with arithmetic operators (for example, 
+ *  0.1 + 0.2 does not equal 0.3, but instead 0.30000000000000004). This is due to limitations within the language
+ *  itself that was previously touched on in data types, and thus not an error, but instead a quirk of many 
+ *  programming languages. 
  * 
  * */
      //   Arithmetic Operators
@@ -156,17 +157,18 @@
 
 /* *
  *  5. Unary operators
+ *
+ *  Unary operators are operators that perform an action on an individual operand. there are some arithmetic operators
+ *  that are unary, namely the increment and decrement operators.
  * 
- *     Unary operators are operators that perform an action on a single operand. there are two arithmetic operators
- *     that are unary: + and -, and both must prefix its single operand
  * */
      // +x	Unary Plus	Convert a value into a number
      // -x	Unary Minus	Convert a value into a number and negate it
      // ++x	Increment Operator (Prefix)	Add one to the value
      // –x	Decrement Operator (Prefix)	Subtract one from the value
-     // x++	Increment Operator (Postfix)	Add one to the value
+     // x++	Increment Operator (Postfix) Add one to the value
      // x–	Decrement Operator (Postfix)
-     // x-- Decrement Operator 
+     // x-- Decrement Operator (Postfix) Subtract one from the value
 
 /* *
  *  6. Ternary operator
