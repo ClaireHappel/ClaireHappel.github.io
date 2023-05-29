@@ -15,8 +15,8 @@
  *  1. The two phases to using functions: First we must ____? Next we can execute a function by ____? 
  *    (or two other words for executing a function)
  * 
- *  First the function must be created, once it has been initialized it can then be executed by calling it, 
- *  using arguements if the object takes them.
+ *  First the function must be created, once it has been initialized it can then be executed by calling the
+ *  function itself, using arguements within the call if the object takes any parameters.
  * 
  * */
 
@@ -65,8 +65,29 @@
 /* *
  *  6. Scope: Functions can see and modify variables in parent or global scopes. The inverse is not true.
  * 
- *  
+ *  This property of scope is important to understand because it impacts our ability to access variables and 
+ *  impacts the control flow. As we build our programs, we need to do so in such a way that all needed 
+ *  variables are accessed properly. Parent scope, also called global scope- is the outermost scope of 
+ *  every file containing Javascript. Function scope is also called local scope, and refers to to contained
+ *  scope of a function. Block scope refers to any scope that is surround by curly brackets ({}) such as 
+ *  conditionals. Scopes are often nested, which leads to the innermost scopes having access to all variables 
+ *  in the scopes that precede the child scope. 
+ * 
  * */
+
+ let myGlobal = 1;
+
+ function mrWorldWide (value) {
+
+  let value2 = value + 2;
+
+    if (value) {
+      let value3 = value + value2;
+      return value3;
+    }
+
+ }
+
 
 /* *
  *  7. Closures: Functions form closures around the data they house. If an object is returned from the function

@@ -1,5 +1,5 @@
 /* *
- *  0. VARIABLES
+ *  0. VARIABLES  
  * 
  *  Variables hold on to the information we assign either during initialization or assignment later in the program. 
  *  They allow us to use data as many times as needed within our programs. They can be assigned to the value of any 
@@ -36,34 +36,34 @@
  * */
      // var: 
 
-      //declaring and assigning a value with var
+      // declaring and assigning a value with var
       var thisFire = 'Is out of control'; 
       console.log(thisFire); // => Is out of control
-      //redeclaring the variable 
+      // redeclaring the variable 
       var thisFire = 'Is actually pretty manageable!';
       console.log(thisFire); // => Is actually pretty manageable!
 
      // let:
 
-      //declaring and assigning a value with let
+      // declaring and assigning a value with let
       let wakeMeUp = 'inside';
       console.log(wakeMeUp); // => inside
-      //attempting to redeclare with let will result in errors
+      // attempting to redeclare with let will result in errors
       let wakeMeUp = 'when it\'s all over';
         // running code results in => SyntaxError: Identifier 'wakeMeUp' has already been declared
-      //instead, reassign wakemeUp to a new value
+      // instead, reassign wakemeUp to a new value
       wakeMeUp = 'before you go-go';
       console.log(wakeMeUp) // => before you go-go
 
      // const:
 
-      //declaring and assigning a value with const
+      // declaring and assigning a value with const
       const lawOfConservationOfMass = 'In a closed or isolated system, matter cannot be created or destroyed.';
       console.log(lawOfConservationOfMass); // => In a closed or isolated system, matter cannot be created or destroyed.
-      //attempting to redeclare will result in errors
+      // attempting to redeclare will result in errors
       const lawOfConservationOfMass = 'Some matter is definitely destroyed.';
          // running code results in => SyntaxError: Identifier 'lawOfConservationOfMass' has already been declared
-      //attempting to reassign will result in errors
+      // attempting to reassign will result in errors
       lawOfConservationOfMass = 'Maybe some matter can be created?';
          // running code results in => TypeError: Assignment to constant variable.
    
@@ -78,41 +78,41 @@
  *   
  * */
     
-    //declaring a variable before a function allows it to be accessed
+    // declaring a variable before a function allows it to be accessed
     var theresNot = 'a soul out there';
     
-    //a function
+    // a function
     function gimmeGimmeGimme() {
        
-       //accessible values 
+       // accessible values 
        console.log(aMan); // => after midnight
        console.log(wontSomebody); // => help me chase the shadows away?
        console.log(theresNot); // => a soul out there
-       //let prevents initialization before declaration
+       // let prevents initialization before declaration
        console.log(noOne); // => ReferenceError: Cannot access 'noOne' before initialization
-       //var will cause the value not yet declared to return undefined, as the program recognizes var exists because of hoisting
+       // var will cause the value not yet declared to return undefined, as the program recognizes var exists because of hoisting
        console.log(takeMe); // => undefined
-       //const will also prevent intitilization prior to declaration
+       // const will also prevent intitilization prior to declaration
        console.log(toThe); // => ReferenceError: Cannot access 'toThe' before initialization
           
        let noOne = 'to hear my prayer';  
        
-       //noOne can be accessed after being declared
+       // noOne can be accessed after being declared
        console.log(noOne); // => to hear my prayer
 
     }
     
-    //declaring before the function call, also allows it to be accessed- as seen with both let and var here
+    // declaring before the function call, also allows it to be accessed- as seen with both let and var here
     var aMan = 'after midnight';
     let wontSomebody = 'help me chase the shadows away?';
     
-    //function call
-    gimmeGimmeGimme();
+    // function call
+    gimmeGimmeGimme(); 
     
-    //declaring after a function call
-    //takeMe is undefined when called within the function, no errors are thrown
+    // declaring after a function call
+    // takeMe is undefined when called within the function, no errors are thrown
     var takeMe = 'through the darkness';
-    //toThe meanwhile, threw an error
+    // toThe meanwhile, threw an error
     const toThe = 'break of the day';
 
 

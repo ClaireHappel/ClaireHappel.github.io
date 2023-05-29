@@ -24,42 +24,122 @@
  *  this is highly accurate, it is not limitless in terms of the numbers it can produce- and thus there can be issues with
  *  a value's magnitude and precision which will be discussed further in the operators section of this project.
  * 
- * */
+ * */ 
+      // Variable Set to a Number:
+       let thisIsANumber = 4329;
+
+      // Transforming a String to a Number:
+       let prestoChango = Number('42');
+       console.log(prestoChango); // => 42 is printed to the console
 
 /* *
  *  2. String
  * 
- *   Strings are one of the two data types that contain indexes and a length property, which makes them particularly easy
- *   to work with and manipulate. String can be created using single or double quotes, which are treated identically, or 
- *   using the backtick character ` in order to create template literals (also called template strings). A unique property
- *   worth noting regarding strings is that in javascript- 'a' is less than 'z'. This is because letters and characters do not
- *   follow alphabetical order but lexicographical order, and comparisons are measuring the Unicode value of the compared 
- *   values.
+ *   Strings are one of the data types that have indexes (starting at index 0) and a length property, which makes them 
+ *   particularly easy to work with and manipulate. String can be created using single or double quotes, which are treated 
+ *   identically, or using the backtick character ` in order to create template literals (also called template strings).
+ *   A unique property worth noting regarding strings is that in javascript- 'a' is less than 'z'. This is because letters 
+ *   and characters do not follow alphabetical order but lexicographical order, and comparisons are measuring the Unicode 
+ *   value of the compared values.
  * 
  * */
+     // Variable Set to a String:
+      let whatAString = "what a value!";
+
+     // Transforming a Number to a String:
+      let stringifying = String(null); // while some methods like .toString() will return an error trying to turn null or undefined values to a string, String() will convert them.
+      console.log(stringifying) // => 'null' is logged to console
 
 /* *
  *  3. Boolean
  * 
  *  There are only two boolean values: true and false. These values are often used in conditionals. The primitive Boolean 
  *  values true and false are distinctly different from the the true and false values of the Boolean object. To avoid any
- *  errors within code- avoic using Boolean() constructor with new to convert a non-boolean value to a boolean value.
+ *  errors within code- avoid using Boolean() constructor with new to convert a non-boolean value to a boolean value.
  *  Instead, use Boolean as a function or the double bang operator to coherce the value into the primitive boolean.
  * 
  * */
+     // Variable Set to a Boolean:
+      let thisBoolean = false;
+
+     // Cohercing a Value to a Primitive Boolean Value:
+      let changeToBoolean = 43297;
+      console.log(!!toBoolean) // 'true' is logged to console
 
 /* *
  *  4. Array
  *   
- *   An array is .length 
+ *   Arrays store a collection of many different values. They are ordered, and thus have a length and index property similar 
+ *   to strings- with the first index starting at 0. They are considered to be objects within Javascript, and sorting them 
+ *   from objects is best done with the Array.isArray() method. JavaScript arrays are not associative arrays. This is because
+ *   unlike other objects- the elements in an array are access using index values instead of having strings as indexes. This
+ *   is why dot notation can be used in order to access an object but not on arrays, as dot notation is always searching 
+ *   for a string value. There are several methods specifically for working with arrays that allow for both destructive and
+ *   non-destructive manipulations of data stored within arrays.
  * 
  * */
+     // Variable Set to an Array:
+      let lookAnArray = ['elements', 'of', 'an', 'array'];
+
+     // Using Array.isArray() to Determine is a Value is an Array:
+      console.log(Array.isArray(lookAnArray)) // => 'true' is logged to the console
+    
+    // How To Access An Array
+     
+     // bracket notation 
+      console.log(lookAnArray[0]) // => 'elements' is logged to the console
+
+     // array methods, such as .push() and .unshift()
+       lookAnArray.push('!'); // adds element to the back of the array
+       lookAnArray.unshift('Look'); // adds element to the front of the array
+       console.log(lookAnArray); // => [ 'Look', 'elements', 'of', 'an', 'array', '!' ] is logged to the console
 
 /* *
  *  5. Object
  * 
- *   Unordered arrays, nulls, instanceof Date,
+ *   Objects are unordered (meaning they do not have a length property, nor indexes) and instead contain a 
+ *   collection of key/value pairs. Using typeof we can see that the type object is not limited to objects
+ *   alone, and that many other elements are also considered objects. This includes arrays, nulls, and Date. 
+ *   Their keys and values can be accessed using dot or bracket notation, or by using a for-in loop - which
+ *   will be discussed in loops. 
+ * 
  * */
+      // How to Look for Specific Objects:
+
+        let thisObj = { not: 'a date, array, or null'}; // => an object
+        let thisDate = new Date(); // => a new date
+        let imNull = null; // => value set to null
+        let isAnArray = [1, 2, 3]; // => an array
+   
+        function onlyObjects (anObj) {
+          if (anObj instanceof Date) { // this condition will check for dates
+           return 'No dates!'; 
+             } else if (anObj === null) { // this condition will check for null
+           return 'Never a null day!';
+             } else if (Array.isArray(anObj)) { // this condition will check for arrays
+          return 'Thrown in dis-array!';
+             } else {
+          return 'Is an object.' // if none of the previous values were hit, we have an object
+          }
+        }
+   
+        console.log(onlyObjects(thisObj)); // => 'Is an object.' is logged to the console
+        console.log(onlyObjects(thisDate)); // => 'No dates!' is logged to the console
+        console.log(onlyObjects(imNull)); // => 'Never a null day!' is logged to the console
+        console.log(onlyObjects(isAnArray)); // => 'Thrown in dis-array!' is logged to the console
+
+      // How to Access an Object (using previously declared object, thisObj):
+        
+        // dot notation 
+        thisObj.newKey = 'this key';
+        // bracket notation 
+        thisObj['anotherNewKey'] = 'that key';
+
+        console.log(thisObj); // =>  {
+                                  //  not: 'a date, array, or null',
+                                  //  newKey: 'this key',
+                                  //  anotherNewKey: 'that key'
+                                  // }
 
 /* *
  *  6. Function
@@ -73,17 +153,16 @@
  *  Undefined means does not exist or contains nothing, in the sense of this value was stated but was not defined. 
  * 
  * */
-     //Checking for an undefined value
+     // Checking For an undefined Value:
 
      let whatTimeIsIt; // => while the variable was created, it was never assigned
-
      console.log(whatTimeIsIt); // => 'undefined' is logged to the console
 
-     //a conditional statement that checks if whatTimeIsIt is undefined
-     if (whatTimeIsIt === undefined) { 
+     // Locating undefined Values to Assign Value to Them:
+
+     if (whatTimeIsIt === undefined) {  // => checking for the value undefined
      whatTimeIsIt = 'Party Time!'; // => now whatTimeIsIt has been assigned a value of 'Party Time!'
      }
-
      console.log(whatTimeIsIt); // => 'Party Time!' is logged to the console
 
 /* *
@@ -94,7 +173,24 @@
  *  type of null is an object.
  * 
  * */
+     // null is an object by error due to an artifact of early Javascript where its type tag was similar to objects, leading to the mix up 
+     console.log(typeof null); // => 'object' is logged to console
+     
+        // null can be sorted from other objects by filtering for it specfically
+        let newObj = { not: 'null'}; // => a standard object
+        let isNull = null; // => a new date
 
+       function nullified (obj) {
+         if (obj === null) { // this will sort null from other objects
+          return "Null and void!"; 
+         } else {
+          return "Not null."
+         }
+       }
+
+        console.log(nullified(newObj)); // => "Not null." is logged to the console
+        console.log(nullified(isNull)); // => "Null and void!" is logged to the console    
+     
 /* *
  *  9. NaN
  * 
@@ -121,7 +217,11 @@
  *  called "copy by value". 
  * 
  * */ 
-     // Simple Data Types:
+     // Examples of Simple Data Types:
+
+      let stringed = "This is a string value"; // a string
+      let numbed = 4038; // a number
+      let booled = false; // a boolean
 
  /* *
  *  Complex values are of an indefinite size and aggregate values. As such they require dynamic memory allocation- 
@@ -131,8 +231,14 @@
  *  assigned to. 
  * 
  * */
-     // Complex Data Types:
+     // Examples of Complex Data Types:
 
+      let arrayed = ['this', 'array']; // an array
+      let objected = {
+        thisIs: 'an object'  // an object
+      };
+      let functioned = (summed) => summed + 1; // a function
+      
 /* *
  *  12. Primitive values are passed to a function BY COPY, complex values are by reference.
  *      What does that mean, and how are they different?
