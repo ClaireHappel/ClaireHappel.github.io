@@ -49,7 +49,7 @@
  *  conditional chain fail to execute. Else statements will always be at the end of a chain.
  * 
  * */
-     //init num to the value of 5
+     //init num to the value of 5 
     let num = 5;
     
     //check to see if num is divisible by 2 or 3, if it is- log this to the console

@@ -18,11 +18,19 @@
  *  to a new value. 
  * 
  * */
-     //declaration of variable pet
+     // Declaration:
+
+      //declaration of variable pet
       var pet;
-     //assignment of variable pet to the string value 'Siegfried Happel'
+    
+     // Assignment:
+
+      //assignment of variable pet to the string value 'Siegfried Happel'
       pet = 'Siegfried Happel';
-     //initialization of variable pet 2 to the string value 'Roy Happel'
+
+     // Initialization:
+
+      //initialization of variable pet 2 to the string value 'Roy Happel'
       var pet2 = 'Roy Happel';
 /* * 
  *  2. var, let, and const
@@ -36,36 +44,39 @@
  * */
      // var: 
 
-      // declaring and assigning a value with var
-      var thisFire = 'Is out of control'; 
-      console.log(thisFire); // => Is out of control
-      // redeclaring the variable 
-      var thisFire = 'Is actually pretty manageable!';
-      console.log(thisFire); // => Is actually pretty manageable!
+      //declaring and assigning a value with var
+       var thisFire = 'Is out of control'; 
+       console.log(thisFire); // => Is out of control
+
+      //redeclaring the variable 
+       var thisFire = 'Is actually pretty manageable!';
+       console.log(thisFire); // => Is actually pretty manageable!
 
      // let:
 
-      // declaring and assigning a value with let
-      let wakeMeUp = 'inside';
-      console.log(wakeMeUp); // => inside
-      // attempting to redeclare with let will result in errors
-      let wakeMeUp = 'when it\'s all over';
-        // running code results in => SyntaxError: Identifier 'wakeMeUp' has already been declared
-      // instead, reassign wakemeUp to a new value
-      wakeMeUp = 'before you go-go';
-      console.log(wakeMeUp) // => before you go-go
+      //declaring and assigning a value with let
+       let wakeMeUp = 'inside';
+       console.log(wakeMeUp); // => inside
+
+      //attempting to redeclare with let will result in errors
+       let wakeMeUp = 'when it\'s all over'; //running code results in => SyntaxError: Identifier 'wakeMeUp' has already been declared
+        
+      //instead, reassign wakemeUp to a new value
+       wakeMeUp = 'before you go-go';
+       console.log(wakeMeUp) // => before you go-go
 
      // const:
 
-      // declaring and assigning a value with const
-      const lawOfConservationOfMass = 'In a closed or isolated system, matter cannot be created or destroyed.';
-      console.log(lawOfConservationOfMass); // => In a closed or isolated system, matter cannot be created or destroyed.
-      // attempting to redeclare will result in errors
-      const lawOfConservationOfMass = 'Some matter is definitely destroyed.';
-         // running code results in => SyntaxError: Identifier 'lawOfConservationOfMass' has already been declared
-      // attempting to reassign will result in errors
-      lawOfConservationOfMass = 'Maybe some matter can be created?';
-         // running code results in => TypeError: Assignment to constant variable.
+      //declaring and assigning a value with const
+       const lawOfConservationOfMass = 'In a closed or isolated system, matter cannot be created or destroyed.';
+       console.log(lawOfConservationOfMass); // => In a closed or isolated system, matter cannot be created or destroyed.
+
+      //attempting to redeclare will result in errors
+       const lawOfConservationOfMass = 'Some matter is definitely destroyed.'; // running code results in => SyntaxError: Identifier 'lawOfConservationOfMass' has already been declared
+                  
+      //attempting to reassign will result in errors
+       lawOfConservationOfMass = 'Maybe some matter can be created?'; // running code results in => TypeError: Assignment to constant variable.
+         
    
  /* *
  *  3. Hoisting
@@ -76,43 +87,47 @@
  *  to errors. Using let and const to declare a variable will prevent variables being used before declaration, sending an error to the console 
  *  instead of simply declaring the variable undefined. This helps us weed out any unintentional side effects that could result from hoisting. 
  *   
- * */
+ * */ 
+     // Hoisting and Accessibility:
     
-    // declaring a variable before a function allows it to be accessed
-    var theresNot = 'a soul out there';
+     //declaring a variable before a function allows it to be accessed
+     var theresNot = 'a soul out there';
     
-    // a function
-    function gimmeGimmeGimme() {
+     //a function
+     function gimmeGimmeGimme() {
        
-       // accessible values 
-       console.log(aMan); // => after midnight
-       console.log(wontSomebody); // => help me chase the shadows away?
-       console.log(theresNot); // => a soul out there
-       // let prevents initialization before declaration
-       console.log(noOne); // => ReferenceError: Cannot access 'noOne' before initialization
-       // var will cause the value not yet declared to return undefined, as the program recognizes var exists because of hoisting
-       console.log(takeMe); // => undefined
-       // const will also prevent intitilization prior to declaration
-       console.log(toThe); // => ReferenceError: Cannot access 'toThe' before initialization
+        //accessible values 
+        console.log(aMan); // => after midnight
+        console.log(wontSomebody); // => help me chase the shadows away?
+        console.log(theresNot); // => a soul out there
+
+        //let prevents initialization before declaration
+        console.log(noOne); // => ReferenceError: Cannot access 'noOne' before initialization
+
+        //var will cause the value not yet declared to return undefined, as the program recognizes var exists because of hoisting
+        console.log(takeMe); // => undefined
+
+        //const will also prevent intitilization prior to declaration
+        console.log(toThe); // => ReferenceError: Cannot access 'toThe' before initialization
           
-       let noOne = 'to hear my prayer';  
+        let noOne = 'to hear my prayer';  
        
-       // noOne can be accessed after being declared
-       console.log(noOne); // => to hear my prayer
+        //noOne can be accessed after being declared
+        console.log(noOne); // => to hear my prayer
 
     }
     
-    // declaring before the function call, also allows it to be accessed- as seen with both let and var here
-    var aMan = 'after midnight';
-    let wontSomebody = 'help me chase the shadows away?';
+     //declaring before the function call, also allows it to be accessed- as seen with both let and var here
+     var aMan = 'after midnight';
+     let wontSomebody = 'help me chase the shadows away?';
     
-    // function call
-    gimmeGimmeGimme(); 
+     //function call
+     gimmeGimmeGimme(); 
     
-    // declaring after a function call
-    // takeMe is undefined when called within the function, no errors are thrown
-    var takeMe = 'through the darkness';
-    // toThe meanwhile, threw an error
-    const toThe = 'break of the day';
+     //declaring after a function call
+     //takeMe is undefined when called within the function, no errors are thrown
+     var takeMe = 'through the darkness';
+     //toThe meanwhile, threw an error
+     const toThe = 'break of the day';
 
 

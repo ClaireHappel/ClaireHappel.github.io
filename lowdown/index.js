@@ -9,7 +9,8 @@
  *  @param {Array or Object} collection: The collection over which to iterate.
  *  @param {Function} action: The Function to be applied to each value in the 
  *  collection.
- */
+ **/
+
 function each(collection, action) {
     if(Array.isArray(collection)) {
         for(var i = 0; i < collection.length; i++) {
@@ -27,9 +28,11 @@ module.exports.each = each;
 
 /** 
 *  identity: Designed to take any value. It then returns the value unchanged.
+*
 *  @param {Value} value: The value that is taken in, it can be anything.
 *  @return {Value} value: The same value that was taken in, unchanged.
-*/
+*
+**/
 
 function identity(value) {
     return value;
@@ -40,9 +43,11 @@ module.exports.identity = identity;
 /** 
 *  typeOf: Designed to take in any value and then evaluate the value, returning a string
 *          indicating the data type of the value given.
-*   @param {Value} value: The value that is taken in, it can be anything.
-*   @return {String} string: A string that is the data type of the given value.
-*/
+*
+*  @param {Value} value: The value that is taken in, it can be anything.
+*  @return {String} string: A string that is the data type of the given value.
+*
+**/
 
 function typeOf(value) {
     
@@ -74,23 +79,18 @@ function typeOf(value) {
 
     module.exports.typeOf = typeOf;
 
-    /** _.first
-* Arguments:
-*   1) An array
-*   2) A number
-* Objectives:
-*   1) If <array> is not an array, return []
-*   2) If <number> is not given or not a number, return just the first element in <array>.
-*   3) Otherwise, return the first <number> items of <array>
-* Edge Cases:
-*   1) What if <number> is negative?
-*   2) What if <number> is greater than <array>.length?
-* Examples:
-*   _.first("ponies", 1) -> []
-*   _.first(["a", "b", "c"], "ponies") -> "a"
-*   _.first(["a", "b", "c"], 1) -> "a"
-*   _.first(["a", "b", "c"], 2) -> ["a", "b"]
-*/
+/** 
+*  first: Designed to take an array and a number and return an empty array if the parameter array is not an array, the first element
+*         of the array if number is not given or not a number, and if both parameters are defined- the function will return the total
+*         number of elements from the array as number designates. 
+*
+*  @param {Array} array: An array to iterate over.
+*  @param {Number} number: A number to determine how many elements to return.
+*  @return {Array} array: If the array parameter is not an array, return the empty array [].
+*  @return {Array[0]} a single element: If parameter number is not given or not a number, return just the first element of the array.
+*  @return {Elements} elements: Return as many elements of the array as designated by number.
+*
+**/
 
 //init first to a function that takes an array 
 function first(array, number) {
@@ -109,23 +109,18 @@ function first(array, number) {
 
   module.exports.first = first;
 
-  /** _.last
-* Arguments:
-*   1) An array
-*   2) A number
-* Objectives:
-*   1) If <array> is not an array, return []
-*   2) If <number> is not given or not a number, return just the last element in <array>.
-*   3) Otherwise, return the last <number> items of <array>
-* Edge Cases:
-*   1) What if <number> is negative?
-*   2) What if <number> is greater than <array>.length?
-* Examples:
-*   _.last("ponies", 2) -> []
-*   _.last(["a", "b", "c"], "ponies") -> "c"
-*   _.last(["a", "b", "c"], 1) -> "c"
-*   _.last(["a", "b", "c"], 2) -> ["b", "c"]
-*/
+/** 
+*  last: Designed to take an array and a number and return an empty array if the parameter array is not an array, the last element
+*         of the array if number is not given or not a number, and if both parameters are defined- the function will return the total
+*         number of elements from the array as number designates. 
+*
+*   @param {Array} array: An array to iterate over.
+*   @param {Number} number: A number to determine how many elements to return.
+*   @return {Array} array: If the array parameter is not an array, return the empty array [].
+*   @return {Array[0]} a single element: If parameter number is not given or not a number, return just the last element of the array.
+*   @return {Elements} elements: Return as many elements of the array as designated by number.
+*
+**/
 
 //init first to a function that takes an array 
 function last(array, number) {

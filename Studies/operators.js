@@ -268,9 +268,9 @@
      // Increment Operator (++x or x++):
 
         // Prefix (++x):
-           // the prefix increment returns the value of a variable after it has been incremented.
+           //the prefix increment returns the value of a variable after it has been incremented.
         // Postfix (x++):
-           // the postfix increment returns the value of a variable before it has been incremented.
+           //the postfix increment returns the value of a variable before it has been incremented.
 
            // lets show this by incrementing x
             let x = 2;
@@ -289,9 +289,9 @@
      // Decrement Operator (--x or x--):
 
         // Prefix (--x):
-           // the prefix decrement returns the value of a variable after it has been decremented.
+           //the prefix decrement returns the value of a variable after it has been decremented.
         // Postfix (x--):
-           // the postfix decrement returns the value of a variable before it has been decremented.
+           //the postfix decrement returns the value of a variable before it has been decremented.
 
            // lets show this by decrementing y
            let y = 4;
@@ -315,7 +315,7 @@
 
      // typeof:
 
-       // the typeof operator returns a string indicating the type of the operand's value.
+       //the typeof operator returns a string indicating the type of the operand's value.
        console.log(typeof 'this string?'); // => 'string' is logged to console
        console.log(typeof 777); // => 'number' is logged to console
        console.log(typeof NaN); // => 'number' is logged to console
@@ -325,7 +325,7 @@
        console.log(typeof ((x) => x + y)); // => 'function' is logged to console
        console.log(typeof undefined); // => 'undefined' is logged to console
      
-       // of particular note is the many things that will return 'object'
+       //of particular note is the many things that will return 'object'
        console.log(typeof {key: 'value'}); // => 'object' is logged to console
        console.log(typeof null); // => 'object' is logged to console, why null is logged as an object is discussed in data types
        console.log(typeof ['elements', 'of', 'an', 'array']); // => 'object' is logged to console as arrays are   
@@ -374,7 +374,7 @@
 
      let ternary = true;
 
-     // this line of code is highly readable and takes up only one line- and is a reusable function! this is where the ternary operator excels.
+     //this line of code is highly readable and takes up only one line- and is a reusable function! this is where the ternary operator excels.
      let boolTest = (boolean) => boolean === true ? 'The ternary operator is very useful!' : 'Ternary operator? What\'s that?';
 
      console.log(boolTest(ternary)); // => 'The ternary operator is very useful!' is logged to the console

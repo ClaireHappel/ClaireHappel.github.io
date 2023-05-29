@@ -17,7 +17,7 @@
 /* *
  *  1. Number
  * 
- *  Numbers, which are floating point values instead of integers within Javascript, can be either whole numbers (such as 9, 
+ *  Numbers, which are floating point values instead of integers within JavaScript, can be either whole numbers (such as 9, 
  *  398420, or 78) or decimal numbers (such as 56.78, 9.32, or .000016). There are many ways to write a number or even 
  *  transform another data type into a number. Number(value) converts a value to the Number type, or if it is impossible 
  *  to convert- returns NaN. The JavaScript Number type is a double-precision 64-bit binary format IEEE 754 value, while 
@@ -35,12 +35,12 @@
 /* *
  *  2. String
  * 
- *   Strings are one of the data types that have indexes (starting at index 0) and a length property, which makes them 
- *   particularly easy to work with and manipulate. String can be created using single or double quotes, which are treated 
- *   identically, or using the backtick character ` in order to create template literals (also called template strings).
- *   A unique property worth noting regarding strings is that in javascript- 'a' is less than 'z'. This is because letters 
- *   and characters do not follow alphabetical order but lexicographical order, and comparisons are measuring the Unicode 
- *   value of the compared values.
+ *  Strings are one of the data types that have indexes (starting at index 0) and a length property, which makes them 
+ *  particularly easy to work with and manipulate. String can be created using single or double quotes, which are treated 
+ *  identically, or using the backtick character ` in order to create template literals (also called template strings).
+ *  A unique property worth noting regarding strings is that in JavaScript- 'a' is less than 'z'. This is because letters 
+ *  and characters do not follow alphabetical order but lexicographical order, and comparisons are measuring the Unicode 
+ *  value of the compared values.
  * 
  * */
      // Variable Set to a String:
@@ -69,13 +69,13 @@
 /* *
  *  4. Array
  *   
- *   Arrays store a collection of many different values. They are ordered, and thus have a length and index property similar 
- *   to strings- with the first index starting at 0. They are considered to be objects within Javascript, and sorting them 
- *   from objects is best done with the Array.isArray() method. JavaScript arrays are not associative arrays. This is because
- *   unlike other objects- the elements in an array are access using index values instead of having strings as indexes. This
- *   is why dot notation can be used in order to access an object but not on arrays, as dot notation is always searching 
- *   for a string value. There are several methods specifically for working with arrays that allow for both destructive and
- *   non-destructive manipulations of data stored within arrays.
+ *  Arrays store a collection of many different values. They are ordered, and thus have a length and index property similar 
+ *  to strings- with the first index starting at 0. They are considered to be objects within JavaScript, and sorting them 
+ *  from objects is best done with the Array.isArray() method. JavaScript arrays are not associative arrays. This is because
+ *  unlike other objects- the elements in an array are access using index values instead of having strings as indexes. This
+ *  is why dot notation can be used in order to access an object but not on arrays, as dot notation is always searching 
+ *  for a string value. There are several methods specifically for working with arrays that allow for both destructive and
+ *  non-destructive manipulations of data stored within arrays.
  * 
  * */
      // Variable Set to an Array:
@@ -97,11 +97,11 @@
 /* *
  *  5. Object
  * 
- *   Objects are unordered (meaning they do not have a length property, nor indexes) and instead contain a 
- *   collection of key/value pairs. Using typeof we can see that the type object is not limited to objects
- *   alone, and that many other elements are also considered objects. This includes arrays, nulls, and Date. 
- *   Their keys and values can be accessed using dot or bracket notation, or by using a for-in loop - which
- *   will be discussed in loops. 
+ *  Objects are unordered (meaning they do not have a length property, nor indexes) and instead contain a 
+ *  collection of key/value pairs. Using typeof we can see that the type object is not limited to objects
+ *  alone, and that many other elements are also considered objects. This includes arrays, nulls, and Date. 
+ *  Their keys and values can be accessed using dot or bracket notation, or by using a for-in loop - which
+ *  will be discussed in loops. 
  * 
  * */
       // How to Look for Specific Objects:
@@ -143,9 +143,34 @@
 
 /* *
  *  6. Function
+
+ *  Unlike other data types, a function can produce a completely new value. Functions can be named, anonymous, or assigned
+ *  to a variable. They can be nested just like arrays, but do not contain the length or index properties on an array. Just
+ *  like the other data types, they can be returned or passed to another function via arguments. A function can be anonymous,
+ *  though this makes it difficult to access the function unless it is inside another function, or even better- assigned as 
+ *  another function's return- which can help us to assign the function to a variable. They can also optionally take parameters- 
+ *  a function without parameters can be invoked by its name followed by an opened and closed parentheses. All functions will 
+ *  have a function body, and then optionally have a return.
  * 
- * 
- * */
+ * */ 
+     // Example of a Function: 
+     //          ___ function name   ____ parameters that take arguments are located here
+     //         |                   |
+      function thisFunction(thatParameter) {
+        return `You want some return? Cool, let's use this ${thatParameter} I found in the dirt. Five second rule, it should be fine!'`;
+      } // |
+     //    |___ function return will return a value  
+
+      let thisArgument = 'argument';
+
+     // Example of a Function Call:
+
+      thisFunction(thisArgument);
+     // |                     |
+     // |__ invoking func     |__ arguments will be passed into the function via parameters
+
+      console.log(thisFunction(thisArgument)); // => 'You want some return? Cool, let's use this argument I found in the dirt. Five second rule, it should be fine!!' is logged to the console
+
 
 /* *
  *  7. undefined
@@ -173,7 +198,7 @@
  *  type of null is an object.
  * 
  * */
-     // null is an object by error due to an artifact of early Javascript where its type tag was similar to objects, leading to the mix up 
+     // null is an object by error due to an artifact of early JavaScript where its type tag was similar to objects, leading to the mix up 
      console.log(typeof null); // => 'object' is logged to console
      
         // null can be sorted from other objects by filtering for it specfically
@@ -194,8 +219,26 @@
 /* *
  *  9. NaN
  * 
+ *  Nan is a variable within the global scope. NaN will be returned if: a number conversion  fails (such as using Number() or Math.abs() 
+ *  on undefined), a math operation returns something that is not a real number, the number has an indeterminate form (for example, 
+ *  Infinity - Infinity), a method or expression has a value coherced to NaN, or when an invalid value is represented as a number. 
+ *  NaN is contagious, this means that much like a virus, it spreads from one part of the code to the next, being passed on. The 
+ *  place where NaN is first spotted can be far from the place that caused it, making it a high priority to track down if an 
+ *  unintentional NaN slips into code. All failures that cause NaN fail silently, without errors. An interesting thing to note 
+ *  about NaN is that when compared with any comparison operator, NaN always returns false - even if the comparison involves
+ *  comparing NaN to NaN. The proper way to check to see if a number is NaN is via Number.isNan()
  * 
- * */
+ * */ 
+     // NaN Created From A Number Conversion Failure:
+
+      let numberMe = 'hello';
+      console.log(Number('numberMe')); // => NaN is logged to the console, since there is no appropriate number for JavaScript to convert 'hello' to
+    
+     // Checking for NaN:
+
+     if (Number.isNaN(NaN)) { // we are checking to see if the number NaN is NaN- this is possible to check because of NaN's number type
+      console.log('NaN of your business!'); // => NaN of your business! is logged to console
+     }
 
 /* *
  *  10. Infinity and -Infinity
@@ -248,20 +291,20 @@
  *  vein, changing the variable will have no impact on the original data. 
  * 
  * */
-     //Copy By Value:
+     // Copy by Value:
      
        //number is assigned to a primitive value, 5
-       let number = 5;
+        let number = 5;
        //number 2 is copying the value of number
-       let number2 = number;
+        let number2 = number;
      
-       //what happens when we alter both variables?
-       number -= 3;
-       number2 += 6;
+       //what happens when we alter the values assigned to both variables?
+        number -= 3;
+        number2 += 6;
      
        //as their relationship began and ended with the moment of the copying- neither variable are impacted by the operations
-       console.log(number); // => 2 is logged to console since 5 - 3 = 11
-       console.log(number2); // => 11 is logged to console since 5 + 6 = 11
+        console.log(number); // => 2 is logged to console since 5 - 3 = 11
+        console.log(number2); // => 11 is logged to console since 5 + 6 = 11
 
  /* * 
  *  Complex values will instead copy by reference. This means that variables will not make a copy of the value they
@@ -269,4 +312,22 @@
  *  the original data. Any changes to the original data will also effect the variable.
  *    
  * */
+     // Copy by Reference:
+
+      //referenceMe is assigned to the complex array value, [1, 2, 3, 'a', 'b', 'c']
+       let referenceMe = [1, 2, 3, 'a', 'b', 'c'];
+
+      //we assign refMeUpBaby to the value of referenceMe 
+       let refMeUpBaby = referenceMe;
+
+      //what happens when we alter the values assign to both variables?
+       referenceMe.unshift(0);
+       refMeUpBaby.push('d');
+
+      //since they are both making a reference to the same data, refMeUpBaby can make changes to referenceMe as well
+       console.log(referenceMe); // => [ 0,   1,   2,   3, 'a', 'b', 'c', 'd'] is logged to the console
+
+
+
+
 
