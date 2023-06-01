@@ -52,6 +52,18 @@
        var thisFire = 'Is actually pretty manageable!';
        console.log(thisFire); // => Is actually pretty manageable!
 
+      //function scope and var
+      function scopingTheScene() {
+        var scopedOut = 6;
+        {
+          var scopedOut = 8; // this is the same variable- so altering it reassigns the value to 8
+          console.log(scopedOut); // 8 is logged to the console
+        }
+        console.log(scopedOut); // 8 is logged to the console
+      }
+
+      scopingTheScene();
+
      // let:
 
       //declaring and assigning a value with let
@@ -61,9 +73,20 @@
       //attempting to redeclare with let will result in errors
        let wakeMeUp = 'when it\'s all over'; //running code results in => SyntaxError: Identifier 'wakeMeUp' has already been declared
         
-      //instead, reassign wakemeUp to a new value
-       wakeMeUp = 'before you go-go';
+       wakeMeUp = 'before you go-go'; //instead, reassign wakemeUp to a new value
        console.log(wakeMeUp) // => before you go-go
+
+      //block scope and let
+      function threeSixtyNoScope() {
+        let scopedOut = 3;
+        {
+          let scopedOut = 5; // this is a different variable because of scoping- meaning that depending on what scope we're in, we're dealing with a different value
+          console.log(scopedOut); // 5 is logged to the console
+        }
+        console.log(scopedOut); // 3 is logged to the console
+      }
+
+      threeSixtyNoScope();
 
      // const:
 
@@ -76,7 +99,19 @@
                   
       //attempting to reassign will result in errors
        lawOfConservationOfMass = 'Maybe some matter can be created?'; // running code results in => TypeError: Assignment to constant variable.
-         
+
+      //block scope and const
+
+      function scopeForBroke() {
+        const scopedOut = 9;
+        {
+          const scopedOut = 2; // just like with let - this is a different variable because of scoping- meaning that depending on what scope we're in, we're dealing with a different value
+          console.log(scopedOut); // 2 is logged to the console
+        }
+        console.log(scopedOut); // 9 is logged to the console
+      }
+
+      scopeForBroke()   
    
  /* *
  *  3. Hoisting

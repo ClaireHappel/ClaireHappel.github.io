@@ -31,7 +31,6 @@
       let otherHalf = 'to be put back together again';
 
       let youCompleteMe = halfString + otherHalf + '. Thanks for your help!'; // using the + operator, we can add variables containing strings or the strings themselves
-
       console.log(youCompleteMe) // =>'I really need to be put back together again. Thanks for your help!' is logged to the console
 
      // Using the Addition Assignment Operator(+=):
@@ -40,7 +39,6 @@
       let addingContext = ', she works there as a doctor.'
 
       noContext += addingContext; // here we use the += to assign the string in addingContext to the already existing string in noContext
-
       console.log(noContext) // => 'I visited Ashley in the hospital, she works there as a doctor.' is logged to the console
 
 /* *

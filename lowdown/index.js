@@ -81,14 +81,14 @@ function typeOf(value) {
 
 /** 
 *  first: Designed to take an array and a number and return an empty array if the parameter array is not an array, the first element
-*         of the array if number is not given or not a number, and if both parameters are defined- the function will return the total
-*         number of elements from the array as number designates. 
+*         of the array if number is not given or not a number, and if both parameters are defined- the function will return an array of 
+*         elements that will be equal to number.
 *
 *  @param {Array} array: An array to iterate over.
 *  @param {Number} number: A number to determine how many elements to return.
 *  @return {Array} array: If the array parameter is not an array, return the empty array [].
 *  @return {Array[0]} a single element: If parameter number is not given or not a number, return just the first element of the array.
-*  @return {Elements} elements: Return as many elements of the array as designated by number.
+*  @return {Array} array: Return an array of elements that will be equal to number.
 *
 **/
 
@@ -111,14 +111,14 @@ function first(array, number) {
 
 /** 
 *  last: Designed to take an array and a number and return an empty array if the parameter array is not an array, the last element
-*         of the array if number is not given or not a number, and if both parameters are defined- the function will return the total
-*         number of elements from the array as number designates. 
+*         of the array if number is not given or not a number, and if both parameters are defined- the function will return an array of 
+*         elements that will be equal to number.
 *
 *   @param {Array} array: An array to iterate over.
 *   @param {Number} number: A number to determine how many elements to return.
 *   @return {Array} array: If the array parameter is not an array, return the empty array [].
 *   @return {Array[0]} a single element: If parameter number is not given or not a number, return just the last element of the array.
-*   @return {Elements} elements: Return as many elements of the array as designated by number.
+*   @return {Array} array: Return an array of elements that will be equal to number.
 *
 **/
 

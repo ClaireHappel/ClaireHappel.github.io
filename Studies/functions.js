@@ -117,26 +117,19 @@
 
      let myGlobal = 1;
 
-     function mrWorldWide (value) {
+     function mrWorldWide () {
+      myGlobal += 12;
+      let myLocal = 5;
+    }
 
-      let value2 = value + 2; // function scope can access variables in global scope
-        if (value) {
-         let value3 = value + value2; // block scope can access the variables in global and function scope
-         console.log(value); // => 1 is logged to console
-         console.log(value2); // => 3 is logged to console
-         console.log(value3); // => 4 is logged to console
-         return value3; 
-        }
-     }
+    mrWorldWide (); //calling the function adds 12 to myGlobal, this is because the child scope can modify and see the variables of the parent scope
+    console.log(myGlobal); // => 13 is logged to the console
+    mrWorldWide (); // calling it again will add 12 once again to myGlobal
+    console.log(myGlobal); // => 25 is logged to the console
 
-     //variables that are function and block scoped can not be accessed in global scope
-     console.log(value2) // => ReferenceError: value2 is not defined
-     console.log(value3) // => ReferenceError: value3 is not defined
-
-     //logging a function call
-     console.log(mrWorldWide(myGlobal)); // => 4 is logged to console
-
-
+    let cantModify = myLocal - 2; // => parent scopes can not see the variables within the inner most scopes, and thus can not modify them
+    console.log(cantModify); // => ReferenceError: myLocal is not defined is logged to the console
+  
 /* *
  *  7. Closures: Functions form closures around the data they house. If an object is returned from the function
  *     and is held in memory somewhere (reference), that closure stays alive, and data can continue to exist
