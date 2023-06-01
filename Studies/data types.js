@@ -243,8 +243,43 @@
 /* *
  *  10. Infinity and -Infinity
  * 
+ *  There are two values that represent positive Infinity in JavaScript. The first Infinity is a variable in global
+ *  scope and a property of the global object. This value is distinctly different from the value that is called 
+ *  with Number.POSITIVE_INFINITY. This second value is a data property (and thus the one we are concerned with).
+ *  Positive Infinity is the highest number value within JavaScript. Dividing any positive number by POSITIVE_INFINITY 
+ *  produces +0, while dividing a negative by POSITIVE_INFINITY results in a -0. Any positive value, including 
+ *  POSITIVE_INFINITY itself, equals POSITIVE_INFINITY. 0 or NaN multipied by POSITIVE_INFINITY is NaN. Any 
+ *  negative value multiplied by POSITIVE_INFINITY is equal to NEGATIVE_INFINITY. POSITIVE_INFINITY divided by 
+ *  any negative value that is not NEGATIVE_INFINITY is NEGATIVE_INFINITY. POSITIVE_INFINITY, divided by any 
+ *  positive value except POSITIVE_INFINITY, is POSITIVE_INFINITY. POSITIVE_INFINITY, divided by either NEGATIVE_INFINITY 
+ *  or POSITIVE_INFINITY, is NaN. Number.POSITIVE_INFINITY > x is true for any number x that isn't POSITIVE_INFINITY.
+ *  
+ *  While POSITIVE_INFINITY is the highest possible number, Number.NEGATIVE_INFINITY is the lowest number value within 
+ *  JavaScript. Any positive value, including POSITIVE_INFINITY, multiplied by NEGATIVE_INFINITY is NEGATIVE_INFINITY.
+ *  A negative value, including NEGATIVE_INFINITY, multiplied by NEGATIVE_INFINITY is POSITIVE_INFINITY. A positive 
+ *  value divided by NEGATIVE_INFINITY is -0. A negative value divided by NEGATIVE_INFINITY is +0. Zero or NaN multiplied
+ *  by NEGATIVE_INFINITY is NaN. NEGATIVE_INFINITY, divided by any negative value except NEGATIVE_INFINITY, is POSITIVE_INFINITY.
+ *  NEGATIVE_INFINITY, divided by any positive value except POSITIVE_INFINITY, is NEGATIVE_INFINITY. NEGATIVE_INFINITY, 
+ *  divided by either NEGATIVE_INFINITY or POSITIVE_INFINITY, is NaN. x > Number.NEGATIVE_INFINITY is true for any number 
+ *  x that isn't NEGATIVE_INFINITY.
  * 
  * */
+     // Using Infinity to Make Numbers More Manageable:
+
+     let tooBig = Number.MAX_VALUE * 2;
+     // if the number is too big
+     if (tooBig === Number.POSITIVE_INFINITY) {
+       //we change it to something much smaller
+       tooBig = returnFinite();
+      }
+     
+     // Using -Infinity to Make Numbers More Manageable:
+     let tooSmall = -Number.MAX_VALUE * 2;
+     //if the number is too small
+     if (tooSmall === Number.NEGATIVE_INFINITY) {
+       //we change it to something much larger
+       tooSmall = returnFinite();
+      }
 
 /* *
  *  11. What is the difference between primitive/simple and complex data types?

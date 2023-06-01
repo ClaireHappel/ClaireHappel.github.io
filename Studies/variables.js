@@ -20,12 +20,12 @@
  * */
      // Declaration:
 
-      //declaration of variable pet
+      //declaration of variable pet- at this point pet is undefined, as it has not been assigned a value
       var pet;
     
      // Assignment:
 
-      //assignment of variable pet to the string value 'Siegfried Happel'
+      //assignment of variable pet to the string value 'Siegfried Happel'. Now pet has a value of 'Siegfried Happel', and is no longer undefined.
       pet = 'Siegfried Happel';
 
      // Initialization:
