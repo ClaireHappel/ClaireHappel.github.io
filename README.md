@@ -1,10 +1,7 @@
 # Claire Happel
 
 # Languages
-Javascript
-
-# Libraries Used
-Underscore, jQuery
+Javascript (front end, back end), learning Ruby (back end)
 
 # Web Markup Languages
 HTML5
@@ -13,4 +10,16 @@ HTML5
 CSS3
 
 # Tools
-Version Control: Git, IDE: VS Code
+Version Control: Git
+Libraries: Underscore, jQuery
+IDE: VSCode
+Testing framework: Mocha
+APIs: Chai
+Command Line
+Powershell
+
+# Methodologies and Models
+Object-oriented programming
+Functional programming
+Test-driven development
+Unit testing
